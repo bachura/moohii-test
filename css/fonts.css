@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "BebasNeueBook";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/BebasNeueBook/BebasNeueBook.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeueBook/BebasNeueBook.woff") format("woff"), url("../fonts/BebasNeueBook/BebasNeueBook.ttf") format("truetype"); }
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/RobotoLight/RobotoLight.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoLight/RobotoLight.woff") format("woff"), url("../fonts/RobotoLight/RobotoLight.ttf") format("truetype"); }
+@font-face {
+  font-family: "Verdana";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/VerdanaRegular/VerdanaRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/VerdanaRegular/VerdanaRegular.woff") format("woff"), url("../fonts/VerdanaRegular/VerdanaRegular.ttf") format("truetype"); }

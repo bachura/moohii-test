@@ -1,0 +1,790 @@
+@import "bourbon/bourbon"
+
+/* 	GENERAL STYLE */
+$text-color: #2b2b2b
+$main-color: #fc2561
+
+// Убрать стрелки у формы телефона
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	-webkit-appearance: none
+// Для Firefox
+input
+	&[type='number']
+		-moz-appearance: textfield
+
+// Убрать свечение кнопок в браузере
+button:active, button:focus, a:active, a:focus
+	outline: none !important
+button::-moz-focus-inner 
+	border: 0 !important
+
+html, 
+body
+	margin: 0
+	padding: 0
+	overflow-x: hidden
+body
+	font-family: "Verdana", sans-serif
+	font-weight: 400
+	font-size: 16px
+	background: #f9f9f9
+
+textarea,
+input,
+	&:focus
+		outline: none
+ul
+	margin: 0
+	padding: 0
+li
+	list-style-type: none
+section
+	margin: 30px 0
+	width: 100%
+.bg-white
+	padding: 30px 40px
+	background: #fff
+
+// @media (min-width: 1430px)
+// 	.container
+// 		max-width: 1440px
+
+#toTop
+	width: 50px
+	height: 50px
+	position: fixed
+	bottom: 100px
+	right: 20px
+	z-index: 1000
+	display: none
+	border: 1px solid #656969
+	border-radius: 600px
+	font-family: Arial, sans-serif
+	font-size: 14px
+	font-weight: 600
+	color: #fff
+	text-transform: uppercase
+	letter-spacing: 1px
+	text-align: center
+	line-height: 50px
+	cursor: pointer
+
+@media (max-width: 1199px)
+	section
+		margin: 0
+/* 	END GENERAL STYLE */
+
+/* Adaptive menu */
+#main-menu
+	-webkit-transition: .8s
+	-moz-transition: .8s
+	-ms-transition: .8s
+	-o-transition: .8s
+	transition: .8s
+	li
+		display: block
+		padding: 2px 0
+		a
+			padding: 3px 15px
+			color: $text-color
+			font-size: 14px
+			font-weight: 500
+			&:hover
+				color: $main-color
+				background: transparent
+	z-index: 100000 !important
+	position: absolute
+	left: -100%
+	width: 100%
+	top: 0
+	bottom: 0
+	margin: 0
+	background-color: #fff
+	border: none
+	border-radius: 0
+	&.opened
+		left: 0
+		position: fixed
+	.menu
+		margin-top: 20px
+		text-align: left
+	.account_mobile
+		padding-top: 15px
+.menu-btn
+	height: 36px
+	width: 36px
+	padding: 0 7px 
+	position: absolute
+	right: -80px
+	top: 25px
+	cursor: pointer
+	z-index: 100 !important
+	border-radius: 3px
+.opened .menu-btn
+	right: 0
+	top: 23px
+	border: none
+.menu-btn-line
+	height: 4px
+	background: #000
+	position: absolute
+.menu-btn-line-1
+	transform: rotate(0deg)
+	width: 30px
+	top: 7px
+.menu-btn-line-2
+	top: 17px
+	width: 30px
+	left: 7px
+.menu-btn-line-3
+	transform: rotate(0deg)
+	width: 30px
+	top: 27px
+.opened-menu
+	.menu-btn-line
+		background: #000
+	.menu-btn-line-1
+		transform: rotate(-45deg)
+		width: 15px
+		top: 12px
+	.menu-btn-line-2
+		top: 19px
+		width: 0px
+		left: 9px
+	.menu-btn-line-3
+		transform: rotate(45deg)
+		width: 15px
+		top: 21px
+.moduletable_menu ul
+	padding-left: 25px
+
+@media (max-width: 767px)
+	.menu-btn
+		right: -50px
+/* End Adaptive menu */
+
+/* HEADER */
+.header-top
+	background: #000
+	border-bottom: 1px solid #656969
+	line-height: 32px
+	&-left
+		float: left
+		p
+			margin: 0
+			padding-right: 10px
+			float: left
+			font-size: 13px
+			color: #a0a0a0
+	&-right
+		float: right
+		ul
+			float: right
+			li
+				padding: 0 20px
+				display: inline-block
+				&:last-child
+					padding-right: 10px
+				a
+					text-decoration: none
+					font-size: 13px
+					color: #a0a0a0
+					transition: .3s
+					&:hover
+						color: #fff
+
+/*dropdown*/
+.custom-dropdown
+	position: relative
+	&.active
+		.dropdown-header
+			&:after
+				content: "\f077"
+				font-family: "FontAwesome"
+				color: #fff
+				font-size: 12px
+		.dropdown
+			transform: none
+			z-index: 3
+.dropdown-header
+	padding: 0
+	position: absolute
+	left: 95px
+	line-height: 32px
+	cursor: pointer
+	span
+		font-size: 13px
+		color: #fff
+	&:after
+		content: "\f078"
+		font-family: "FontAwesome"
+		color: #fff
+		font-size: 12px
+	
+.dropdown
+	margin: 0
+	padding: 0
+	position: absolute
+	top: 30px
+	left: 85px
+	background: #fff
+	width: 100%
+	height: auto
+	overflow: auto
+	transition: transform 250ms ease
+	transform: rotateX(90deg)
+	transform-origin: center top
+	cursor: pointer
+	li
+		padding: 0 10px
+		font-size: 13px		
+/*dropdown*/
+
+.header-bottom
+	padding: 20px 0 15px 0
+	&-wrap
+		display: flex
+		align-items: center
+	&-phone
+		width: 14%
+		float: left
+		a
+			font-family: Arial
+			font-weight: 400
+			font-size: 18px
+			color: #000
+			text-decoration: none
+			transition: .3s
+			&:hover
+				color: $main-color
+	&-schedule
+		width: 10%
+		float: left
+		p
+			margin: 0
+			font-size: 11px
+			color: #a0a0a0
+	&-callback
+		width: 14%
+		float: left
+		text-align: center
+		a
+			font-family: Arial
+			font-weight: 400
+			font-size: 14px
+			color: #000
+			text-decoration: none
+			transition: .3s
+			&:hover
+				color: $main-color
+	&-logo
+		width: 30%
+		float: left
+		text-align: center
+	&-search
+		width: 18%
+		float: left
+		text-align: right
+		form
+			margin: 0
+			padding: 0
+			height: 43px
+			display: flex
+			justify-content: flex-end
+		input
+			&.search-text
+				margin: 0 10px 0 0 
+				padding: 0 10px
+				border: none
+				border-bottom: 2px solid transparent
+				background: url(../img/search.png) no-repeat right 0 center transparent
+				width: 19px
+				color: $text-color
+				transition: z-index 0.8s, width 0.5s, background 0.3s ease, border 0.3s
+				cursor: pointer
+				&:focus
+					padding-right: 10px
+					border-bottom: 2px solid $text-color
+					width: 200px
+					outline: none
+					cursor: auto
+		p
+			text-align: right
+	&-compare
+		width: 9%
+		float: left
+	&-cart
+		width: 5%
+		float: left
+		text-align: right
+	&-right-bg
+		margin: 0 auto
+		text-align: center
+		background: $main-color
+		width: 43px
+		height: 43px
+		line-height: 43px
+		border-radius: 600px
+		transition: .3s
+		cursor: pointer
+		&:hover
+			background: $text-color
+	&-caption
+		margin: 0
+		text-align: center
+		font-size: 12px
+		color: #a0a0a0
+	&-mobile
+		padding: 15px 0 10px 0
+		border-bottom: 1px solid #656969
+		&-logo
+			width: 45%
+		&-phone
+			width: 20%
+			a
+				display: block
+				font-family: Arial
+				font-size: 15px
+				&:last-child
+					font-size: 12px
+					color: $main-color
+		&-search
+			width: 17%
+
+
+nav
+	padding: 20px 0
+	border-top: 1px solid #656969
+	border-bottom: 2px solid #dcdedd
+	ul
+		display: flex
+		justify-content: space-between
+		li
+			display: inline-block
+			&:first-child
+				padding-left: 0
+			&:last-child
+				padding-right: 0
+			a
+				font-family: "BebasNeueBook"
+				font-size: 18px
+				letter-spacing: 2px
+				color: #222
+				text-transform: uppercase
+				transition: .3s
+				&:hover
+					text-decoration: none
+					color: $main-color
+
+@media (max-width: 1199px)
+	.header-top,
+	.header-bottom,
+	header nav
+		display: none
+	.header-bottom-mobile
+		display: block
+	.menu_wrap
+		display: block
+@media (max-width: 991px)
+	.header-bottom-mobile
+		&-compare
+			display: none
+		&-logo
+			width: 49%
+			text-align: right
+		&-search
+			width: 21%
+		&-cart
+			width: 10%
+@media (max-width: 767px)
+	.header-bottom-mobile
+		&-phone,
+		&-search
+			display: none
+		&-logo
+			margin-left: 50px
+			width: 80%
+			text-align: left
+		&-cart
+			width: 20%
+@media (max-width: 480px)
+	.header-bottom-mobile-logo img
+		max-width: 95%
+
+@media (min-width: 1200px)
+	.header-bottom
+		display: block
+		&-mobile
+			display: none
+		&-callback
+			width: 12%
+	.menu_wrap
+		display: none
+/* END HEADER */
+
+/* BANNER */
+.owl-prev
+	left: 10px
+	position: absolute
+	top: calc(50% - 15px)
+.owl-next
+	right: 10px
+	position: absolute
+	top: calc(50% - 15px)
+.owl-banner
+	h3
+		margin: 0
+		position: absolute
+		top: calc(50% - 78px)
+		right: 40px
+		max-width: 400px
+		font-family: "BebasNeueBook"
+		font-size: 48px
+		letter-spacing: 2px
+		color: #000
+	.owl-dots
+		position: absolute
+		bottom: 15px
+		left: calc(50% - 36px)
+		span
+			width: 12px
+			height: 12px
+			border: 1px solid #fff
+			background: transparent
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span
+	background: $main-color
+
+.banner-mobile h3
+	max-width: 500px
+@media (max-width: 1199px)
+	.banner
+		display: none
+		&-mobile
+			display: block
+@media (max-width: 992px)
+	.banner-mobile h3
+		max-width: 400px
+		font-size: 30px
+	.banner-wrap .bg-white
+		padding: 0
+@media (max-width: 768px)
+	.banner-mobile h3
+		max-width: 300px
+		letter-spacing: 1px
+@media (max-width: 480px)
+	.banner-mobile h3
+		max-width: 150px
+		top: calc(50% - 24px)
+		font-size: 15px
+
+@media (min-width: 1200px)
+	.banner
+		display: block
+		&-mobile
+			display: none
+
+/* END BANNER */
+
+/* POPULAR */
+.separator
+	margin: 0
+	display: block
+	border-bottom: 1px solid #dcdedd
+	h2
+		margin: 0
+		padding-bottom: 5px
+		display: inline-block
+		border-bottom: 1px solid #000
+		font-family: "Roboto"
+		font-size: 20px
+.slider-popular .owl-carousel.owl-popular
+	padding-top: 30px
+	img
+		margin: 20px auto 0 auto
+	p
+		margin: 0
+		padding-top: 30px
+		font-family: Arial
+		font-size: 16px
+		color: #222
+		height: 5em
+	hr
+		margin: 30px 0 15px 0
+		border-top: 2px solid #dcdedd
+	.cart-btn
+		padding: 15px 12px
+		width: 50%
+		float: left
+		text-align: center
+		background: $main-color
+		font-family: "BebasNeueBook"
+		font-size: 18px
+		letter-spacing: 1px
+		color: #fff
+		text-transform: uppercase
+		transition: .3s
+		text-decoration: none
+		&:hover
+			background: $text-color
+		img
+			margin: 0 5px 0 0
+			display: inline-block
+			width: 19px
+			height: 19px
+.sticker
+	padding: 7px 13px
+	display: block
+	position: absolute
+	top: 0
+	left: 0
+	background: #000
+	font-family: Arial
+	font-size: 13px
+	color: #fff
+.price
+	width: 50%
+	height: 51px
+	float: left
+	display: flex
+	-ms-flex-align: end
+	align-items: flex-end
+	flex-wrap: wrap
+	h5
+		margin: 0
+		font-family: Arial
+		font-weight: 600
+		font-size: 20px
+		color: #000
+		&.price-old
+			padding-bottom: 5px
+			width: 100%
+			font-weight: 500
+			font-size: 18px
+			text-decoration: line-through
+		&.price-new
+			color: #f44336
+
+.slider-popular .owl-prev
+	left: -20px
+.slider-popular .owl-next
+	right: -20px
+
+@media (max-width: 1440px)
+	.slider-popular .owl-carousel.owl-popular .cart-btn
+		font-size: 12px
+@media (max-width: 480px)
+	.slider-popular .owl-carousel.owl-popular .cart-btn
+		font-size: 16px
+/* END POPULAR */
+
+/* BRANDS */
+.brands-wrap
+	display: flex
+	justify-content: space-evenly
+
+@media (max-width: 767px)
+	.brands-wrap
+		flex-direction: column
+		align-items: center
+/* END BRANDS */
+
+/* FOOTER */
+footer
+	padding-bottom: 20px
+	background: #fff
+	hr
+		margin-bottom: 4px
+		border-top: 1px solid #656969
+	.separator
+		border-bottom: 2px solid #dcdedd
+.footer-wrap
+	padding: 30px 0 20px 0
+	&-list-one,
+	&-list-two,
+	&-list-three
+		width: 15%
+		float: left
+		ul li a
+			font-family: "BebasNeueBook"
+			letter-spacing: 2px
+			font-size: 18px
+			color: #222
+			text-transform: uppercase
+			transition: .3s
+			&:hover
+				text-decoration: none
+				color: $main-color
+	&-list-two
+		width: 20%
+	&-list-three
+		width: 20%
+		ul li a
+			font-family: Arial
+			font-size: 14px
+			letter-spacing: normal
+	&-contacts
+		width: 20%
+		float: left
+		&-phone
+			a
+				font-family: Arial
+				font-size: 18px
+				color: #222
+				transition: .3s
+				&:hover
+					text-decoration: none
+					color: $main-color
+		&-schedule
+			padding: 15px 0
+			font-size: 12px
+			color: #a0a0a0
+		&-callback a
+			padding: 10px 22px
+			display: inline-block
+			border: 1px solid $main-color
+			font-family: Arial
+			font-size: 18px
+			color: #222
+			transition: .3s
+			&:hover
+				text-decoration: none
+				color: #fff
+				background: $main-color
+	&-payment
+		width: 25%
+		float: left
+		p
+			margin: 0
+			padding-bottom: 30px
+			font-family: "Roboto"
+			font-size: 16px
+			color: #5e5e5e
+		img
+			display: inline-block
+.footer-bottom
+	padding-top: 25px
+	p
+		margin: 0
+		padding-top: 25px
+		font-family: "Roboto"
+		font-size: 12px
+		color: #5e5e5e
+		a
+			margin: 0
+			color: $main-color
+			text-decoration: none
+.footer-mobile-wrap
+	padding-top: 30px
+	text-align: center
+	&-logo
+		padding-bottom: 25px
+		border-bottom: 1px solid #dcdedd
+	&-menu
+		padding: 30px 0
+		border-bottom: 1px solid #dcdedd
+		h3
+			margin: 0
+			display: inline-block
+			font-family: "BebasNeueBook"
+			font-size: 20px
+			letter-spacing: 2px 
+			text-transform: uppercase
+		.fa
+			font-size: 25px
+			color: $main-color
+	&-payment
+		padding: 30px 0
+		border-bottom: 1px solid #dcdedd
+		p
+			margin: 0
+			padding-bottom: 20px
+			font-family: 	"Roboto"
+			font-size: 16px
+			color: #222
+	&-region
+		padding: 30px 0
+		display: flex
+		flex-direction: row-reverse
+		justify-content: center
+		border-bottom: 1px solid #dcdedd
+		p
+			margin: 0
+			padding-right: 10px
+			float: left
+			font-size: 13px
+			color: #a0a0a0
+		.dropdown-header
+			line-height: normal
+			span
+				color: $main-color
+				border-bottom: 1px dashed $main-color
+		.dropdown
+			li
+				text-align: left
+		.dropdown-header:after,
+		.custom-dropdown.active .dropdown-header:after
+			display: none
+	&-phone
+		padding: 30px 0
+		border-bottom: 1px solid #dcdedd
+		a
+			font-family: Arial
+			font-size: 18px
+			color: $main-color
+			border-bottom: 1px dashed $main-color
+	&-copyright
+		margin: 0 auto
+		padding-top: 30px
+		width: 70%
+		p
+			margin: 0
+			font-family: "Roboto"
+			font-size: 12px
+			color: #5e5e5e
+
+
+
+@media (max-width: 1199px)
+	.footer-wrap
+		&-list-one
+			width: 30%
+			height: 10em
+		&-list-two
+			width: 40%
+			height: 10em
+		&-list-three
+			width: 30%
+			height: 10em
+		&-contacts
+			width: 30%
+		&-contacts-callback
+			display: none
+		&-mobile-callback
+			display: block
+			width: 30%
+			height: 5em
+			float: left
+			display: flex
+			align-items: center
+			a
+				font-size: 14px
+		&-payment
+			width: 40%
+
+@media (max-width: 767px)
+	.footer
+		display: none
+		&-mobile
+			display: block
+
+@media (min-width: 768px)
+	.footer
+		display: block
+		&-mobile
+			display: none
+
+@media (min-width: 1200px)
+	.footer-wrap-mobile-callback
+		display: none
+/* END FOOTER */
